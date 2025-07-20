@@ -1,4 +1,13 @@
 require 'sinatra'
+require_relative 'lib/bot'
+
+# Bot ko ek alag background thread mein shuru karein
+Thread.new do
+  puts "Starting Telegram Bot in background..."
+  Bot.new
+end
+
+# Main thread web server chalayega
 get '/' do
-  redirect 'http://t.me/affiliate_link_gen_bot', 303
+  "Bot is running in the background!"
 end
