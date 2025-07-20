@@ -31,6 +31,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mustermann (1.1.2)
+      ruby2_keywords (~> 0.0.1)
     nio4r (2.7.1)
     oauth2 (1.4.11)
       faraday (>= 0.17.3, < 2)
@@ -62,6 +63,7 @@ GEM
       equalizer (~> 0.0)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -71,6 +73,7 @@ DEPENDENCIES
   json
   puma
   redis
+  ruby2_keywords
   sinatra
   telegram_bot
   uri
