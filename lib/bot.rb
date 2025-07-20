@@ -12,7 +12,8 @@ require_relative 'process_url'
 class Bot
   include ProcessUrl
   def initialize
-    @redis = Redis.new(url: ENV['REDIS_URL'])
+    redis_uri = URI.parse(ENV['REDIS_URL'])
+@redis = Redis.new(host: redis_uri.host, port: redis_uri.port, password: redis_uri.password, ssl: true)
     bot = TelegramBot.new(token: ENV['BOT_TOKEN'])
 
     bot.get_updates(fail_silently: true) do |message|
